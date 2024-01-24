@@ -1,0 +1,234 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : Oct 19, 2023, 7:00:59 PM
+    Author     : Sava Tomovic
+*/
+
+/*Font*/
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+*{
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing:border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing:border-box;
+    margin:0;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    line-height: 2.6rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+.clearfix:after{
+    clear:both;
+    content:"";
+    display: table;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1170px;
+}
+
+a{
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Playfair Display', serif;
+}
+
+.d-flex{
+    display: flex;
+    -webkit-display: flex;
+    -moz-display: flex;
+    -ms-display: flexbox;
+}
+
+.header-title {
+    flex: 0 0 30%; /* Set the first element to take up 30% of the container width */
+    -webkit-flex: 0 0 30%;
+    -moz-flex: 0 0 30%;
+    -ms-flex:0 0 30%;
+}
+
+.home-slider {
+    flex: 0 0 40%; /* Set the first element to take up 30% of the container width */
+    -webkit-flex: 0 0 40%;
+    -moz-flex: 0 0 40%;
+    -ms-flex:0 0 40%;
+}
+
+.header-nav {
+    flex: 0 0 70%;
+    -webkit-flex: 0 0 70%;
+    -moz-flex: 0 0 70%;
+    -ms-flex:0 0 70%;
+}
+
+.wrap{
+    flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+}
+
+.justify-between{
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-flex-pack: justify;
+}
+
+.justify-end{
+    justify-content: flex-end;
+    -webkit-justify-content: flex-end;
+    -moz-justify-content: flex-end;
+    -ms-flex-pack: end;
+}
+
+.align-items-center{
+    align-items: center;
+    -webkit-align-items: center;
+    -moz-align-items: center;
+    -ms-flex-align: center;
+}
+
+.align-items-start{
+    align-items: flex-start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    -ms-flex-align: start;
+}
+.one-column{
+    flex: 0 0 100%;
+    -webkit-flex: 0 0 100%;
+    -moz-flex: 0 0 100%;
+    -ms-flex:0 0 100%;
+}
+.four-column{
+    flex: 0 0 24%;
+    -webkit-flex: 0 0 24%;
+    -moz-flex: 0 0 24%;
+    -ms-flex:0 0 24%;
+}
+
+.three-column{
+    flex: 0 0 32%;
+    -webkit-flex: 0 0 32%;
+    -moz-flex: 0 0 32%;
+    -ms-flex:0 0 32%;
+}
+
+.two-column{
+    flex: 0 0 49%;
+    -webkit-flex: 0 0 49%;
+    -moz-flex: 0 0 49%;
+    -ms-flex:0 0 49%;
+}
+
+.six-column{
+    flex: 0 0 16%;
+    -webkit-flex: 0 0 16%;
+    -moz-flex: 0 0 16%;
+    -ms-flex:0 0 16%;
+}
+
+
+/*Header*/
+
+header{
+    background-color: #4479e1;
+}
+
+header .header-nav ul{
+    list-style: none;
+    padding: 0;
+    margin-left: 340px;
+}
+
+header .header-nav ul li:nth-of-type(2){
+    margin-left: 63px;
+}
+
+header .header-nav ul li:nth-of-type(3){
+    margin-left: 67px;
+}
+
+header .header-nav ul li a{
+    color: #2C2D3C;
+    font-size: 1.8rem;
+    font-family: 'Pacifico', cursive;
+    letter-spacing: 0.46px;
+    line-height: 19px;
+    text-transform: uppercase;
+    padding: 20px 0px;
+    transition: all 0.5s linear;
+    position: relative;
+}
+
+header .header-nav li a.active,
+header .main-menu li a:hover{
+    color:#000;
+
+}
+
+header .header-nav li a:before{
+    content:"";
+    display: block;
+    width:0;
+    height:2px;
+    background: #000;
+    transition: all 0.5s linear;
+    position: absolute;
+    top:60px;
+    left:0px;
+}
+
+
+header .header-nav li a.active:before,
+header .header-nav li a:hover:before{
+    width: 100%;
+}
+
+
+/*Footer*/
+
+
+footer{
+      background-color: #4479e1;
+}
+
+footer img{
+    width: 75%;
+    height: 75%;
+}
+
+footer .social a{
+    color:#000;
+    text-decoration: none;
+    font-size: 2.5rem;
+    margin-right:30px;
+}
+
+foote.social a:nth-last-child{
+    margin-right:90px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Sava Tomovic">
+    <meta name="description" content="Meet Montenegro">
+    <meta name="keywords" content="Montenegro,beach,map,tourism">
+
+    <script src="https://kit.fontawesome.com/f34c11242c.js" crossorigin="anonymous"></script>
+
+    <link th:href="@{/css/style.css}" rel="stylesheet"/>
+    <link th:href="@{/css/normalize.css}" rel="stylesheet"/>
+
+    <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Map</title>
+</head>
+
+<header>
+    <div class="container d-flex justify-between align-items-center">
+        <div class="header-title ">
+            <a href="#" class="logo-picture">
+                <img src="images/noviLogo.png" alt=""/>
+<!--                TODO: fix this make it work with TH:-->
+            </a>
+        </div>
+        <nav class="header-nav ">
+            <ul class="header-nav d-flex">
+                <li><a href="#home" class="active">home</a></li>
+                <li><a href="#about">about us</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<body layout:fragment="body">
+
+</body>
+
+<footer>
+    <div class="container d-flex justify-between align-items-center">
+        <a class="footer-logo">
+            <img src="images/noviLogo.png" alt=""/>
+        </a>
+        <nav class="social d-flex align-items-start">
+            <a href="#" class="fa-brands fa-facebook"></a>
+            <a href="#" class="fa-brands fa-twitter"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+        </nav>
+    </div>
+</footer>
+
+</html>
