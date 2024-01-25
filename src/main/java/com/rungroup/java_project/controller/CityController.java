@@ -3,9 +3,11 @@ package com.rungroup.java_project.controller;
 import com.rungroup.java_project.dto.CityDto;
 import com.rungroup.java_project.models.City;
 import com.rungroup.java_project.services.CityService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -50,7 +52,12 @@ public class CityController {
     }
 
     @PostMapping("/cities/{cityId}/edit")
-    public String updateCity(@PathVariable("cityId") Long cityId, @ModelAttribute("city") CityDto city){
+    public String updateCity(@PathVariable("cityId") Long cityId,
+                             @Valid @ModelAttribute("city") CityDto city,
+                             BindingResult result) {
+        if(result.hasErrors()){
+            return "cities-edit";
+        }
         city.setId(cityId);
         cityService.updateCity(city);
         return "redirect:/cities";
