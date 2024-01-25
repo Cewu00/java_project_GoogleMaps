@@ -10,9 +10,35 @@
 
 <body>
 <main>
+    <!-- TODO: make this actually list the cities -->
     <div layout:fragment="content" class="container">
-        <h1>The MAP of Montenegro</h1>
-        <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+<!--        <h1>The MAP of Montenegro</h1>-->
+<!--        <img src="https://via.placeholder.com/150" alt="Placeholder Image">-->
+        <h2>Za sad samo prikaz jedne tabele iz baze nista specijalno</h2>
+        <table style="color:black;">
+            <tr>
+                <th style="padding: 0px 5px 0px 5px"> ID</th>
+                <th style="padding: 0px 5px 0px 5px"> Name</th>
+                <th style="padding: 0px 5px 0px 5px"> Description</th>
+                <th style="padding: 0px 5px 0px 5px"> Latitude (X)</th>
+                <th style="padding: 0px 5px 0px 5px"> Longitude (Y)</th>
+                <th style="padding: 0px 5px 0px 5px"> Created On</th>
+                <th style="padding: 0px 5px 0px 5px"> Updated On</th>
+            </tr>
+            <tr th:each="city :${cities}">
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.id}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.name}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.description}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.latitude_x}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.longitude_y}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.createdOn}"></td>
+                <td style="padding: 0px 5px 0px 5px" th:text="${city.updatedOn}"></td>
+            </tr>
+        </table>
+
+
+
+
     </div>
 </main>
 </body>
