@@ -45,6 +45,7 @@ img{
 
 .container{
     margin: 0 auto;
+    margin-bottom: 100px;
     width: 1170px;
 }
 

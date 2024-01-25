@@ -16,7 +16,8 @@ public class CityDto {
     private Long id;
     private String name;
     private String description;
-    private String pinGeoLocation;
+    private String latitude_x;
+    private String longitude_y;
 
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;

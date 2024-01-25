@@ -16,6 +16,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Builder
 
+
 @Entity
 @Table(name = "city")
 public class City {
@@ -24,7 +25,8 @@ public class City {
     private Long id;
     private String name;
     private String description;
-    private String pinGeoLocation;
+    private String latitude_x;
+    private String longitude_y;
 
     @CreationTimestamp
     private LocalDateTime createdOn;
