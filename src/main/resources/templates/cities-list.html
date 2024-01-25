@@ -24,6 +24,7 @@
                 <th style="padding: 0px 5px 0px 5px"> Longitude (Y)</th>
                 <th style="padding: 0px 5px 0px 5px"> Created On</th>
                 <th style="padding: 0px 5px 0px 5px"> Updated On</th>
+                <th style="padding: 0px 5px 0px 5px"> Edit Buttons</th>
             </tr>
             <tr th:each="city :${cities}">
                 <td style="padding: 0px 5px 0px 5px" th:text="${city.id}"></td>
@@ -33,6 +34,9 @@
                 <td style="padding: 0px 5px 0px 5px" th:text="${city.longitude_y}"></td>
                 <td style="padding: 0px 5px 0px 5px" th:text="${city.createdOn}"></td>
                 <td style="padding: 0px 5px 0px 5px" th:text="${city.updatedOn}"></td>
+                <td style="padding: 0px 5px 0px 5px">
+                    <a th:href="@{/cities/{cityId}/edit(cityId=${city.id})}"> Edit </a>
+                </td>
             </tr>
         </table>
 

@@ -35,6 +35,32 @@ public class CityServiceImpl implements CityService {
         return cityRepository.save(city);
     }
 
+    @Override
+    public CityDto findCityByID(long cityId) {
+        City city = cityRepository.findById(cityId).get();
+        return mapToCityDto(city);
+    }
+
+    @Override
+    public void updateCity(CityDto cityDto) {
+        City city = mapToCity(cityDto);
+        cityRepository.save(city);
+    }
+
+    private City mapToCity(CityDto city) {
+        City cityDto = City.builder()
+                .id(city.getId())
+                .name(city.getName())
+                .description(city.getDescription())
+                .latitude_x(city.getLatitude_x())
+                .longitude_y(city.getLongitude_y())
+                .createdOn(city.getCreatedOn())
+                .updatedOn(city.getUpdatedOn())
+                .build();
+        return cityDto;
+    }
+
+
     private CityDto mapToCityDto(City city){  // we are only mapping the things we need for the DTO, not the whole city database/model
         CityDto cityDto = CityDto.builder()
                 .id(city.getId())

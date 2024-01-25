@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.List;
@@ -41,5 +42,18 @@ public class CityController {
         return "redirect:/cities";
     }
 
+    @GetMapping("/cities/{cityID}/edit")
+    public String editCityForm(@PathVariable("cityID") long cityID, Model model){
+        CityDto city = cityService.findCityByID(cityID);
+        model.addAttribute("city", city);
+        return "cities-edit";
+    }
+
+    @PostMapping("/cities/{cityId}/edit")
+    public String updateCity(@PathVariable("cityId") Long cityId, @ModelAttribute("city") CityDto city){
+        city.setId(cityId);
+        cityService.updateCity(city);
+        return "redirect:/cities";
+    }
 
 }

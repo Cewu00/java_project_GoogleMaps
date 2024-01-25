@@ -11,5 +11,7 @@ import java.util.List;
 public interface CityService {
     List<CityDto> findAllCities();
     City saveCity(City city);
+    CityDto findCityByID(long cityId);
 
+    void updateCity(CityDto city);
 }
