@@ -31,7 +31,8 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
-    public City saveCity(City city) {
+    public City saveCity(CityDto cityDto) {
+        City city = mapToCity(cityDto);
         return cityRepository.save(city);
     }
 

@@ -39,8 +39,14 @@ public class CityController {
 
     }
     @PostMapping("/cities/new")
-    public String saveCity(@ModelAttribute("city") City city) {
-        cityService.saveCity(city);
+    public String saveCity(@Valid @ModelAttribute("city") CityDto cityDto,
+                           BindingResult result,
+                           Model model) {
+        if(result.hasErrors()){
+            model.addAttribute("city", cityDto);
+            return "cities-create";
+        }
+        cityService.saveCity(cityDto);
         return "redirect:/cities";
     }
 

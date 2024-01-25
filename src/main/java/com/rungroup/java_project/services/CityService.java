@@ -10,8 +10,7 @@ import java.util.List;
 
 public interface CityService {
     List<CityDto> findAllCities();
-    City saveCity(City city);
+    City saveCity(CityDto cityDto);
     CityDto findCityByID(long cityId);
-
     void updateCity(CityDto city);
 }
