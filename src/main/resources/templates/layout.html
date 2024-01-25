@@ -14,15 +14,17 @@
     <link th:href="@{/css/style.css}" rel="stylesheet"/>
     <link th:href="@{/css/normalize.css}" rel="stylesheet"/>
 
+
     <title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">Map</title>
 </head>
+
+<body>
 
 <header>
     <div class="container d-flex justify-between align-items-center">
         <div class="header-title ">
             <a href="#" class="logo-picture">
-                <img src="images/noviLogo.png" alt=""/>
-<!--                TODO: fix this make it work with TH:-->
+                <img th:src="@{/images/noviLogo.png}" alt=""/>
             </a>
         </div>
         <nav class="header-nav ">
@@ -35,14 +37,14 @@
     </div>
 </header>
 
-<body layout:fragment="body">
+<div layout:fragment="content">
 
-</body>
+</div>
 
 <footer>
     <div class="container d-flex justify-between align-items-center">
         <a class="footer-logo">
-            <img src="images/noviLogo.png" alt=""/>
+            <img th:src="@{/images/noviLogo.png}" alt=""/>
         </a>
         <nav class="social d-flex align-items-start">
             <a href="#" class="fa-brands fa-facebook"></a>
@@ -51,5 +53,9 @@
         </nav>
     </div>
 </footer>
+
+
+
+</body>
 
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+
+<head>
+    <title>Create New City</title>
+
+    <!-- bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+
+<body>
+<main>
+    <div layout:fragment="content" class="container">
+        <form role="form" method="post" th:action="@{/cities/new}" th:object="${city}">
+            <div class="form-group">
+                <label for="name">City Name</label>
+                <input type="text"
+                       class="form-control"
+                       id="name"
+                       name="name"
+                       th:field="*{name}"
+                       placeholder="City">
+            </div>
+            <div class="form-group">
+                <label for="description">City Description</label>
+                <textarea class="form-control"
+                          id="description"
+                          name="description"
+                          th:field="*{description}"
+                          placeholder="City Description"></textarea>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="latitude_x">Latitude (X coordinate)</label>
+                    <input type="text"
+                           class="form-control"
+                           id="latitude_x"
+                           name="latitude_x"
+                           th:field="*{latitude_x}"
+                           placeholder="X">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="longitude_y">Longitude (Y coordinate)</label>
+                    <input type="text"
+                           class="form-control"
+                           id="longitude_y"
+                           name="longitude_y"
+                           th:field="*{longitude_y}"
+                           placeholder="Y">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </div>
+</main>
+</body>
+
+</html>
