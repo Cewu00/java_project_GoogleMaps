@@ -37,7 +37,7 @@
                 <button class="dropbtn">Dropdown</button>
                 <div class="dropdown-content">
                     <a th:href="@{/cities/new}">New City</a>
-                    <a href="#">Link 2</a>
+                    <a th:href="@{/cities/table}">Table of Cities</a>
                     <a href="#">Link 3</a>
                 </div>
             </div>
@@ -46,7 +46,7 @@
 </header>
 
 <div layout:fragment="content">
-
+<!-- ovdje ide fragment iz drugih templejta zavisi sve sta se posalje kroz controler-->
 </div>
 
 <footer>

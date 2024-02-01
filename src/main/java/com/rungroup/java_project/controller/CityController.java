@@ -25,11 +25,19 @@ public class CityController {
     }
 
     @GetMapping("/cities")
+    public String googleMapCities(Model model) {
+//        List<CityDto> cities = cityService.findAllCities();
+//        model.addAttribute("cities", cities);
+        return "map";
+    }
+
+    @GetMapping("/cities/table")
     public String listCities(Model model) {
         List<CityDto> cities = cityService.findAllCities();
         model.addAttribute("cities", cities);
         return "cities-list";
     }
+
     @GetMapping("/cities/new")
     public String createCityForm(Model model) {
         City city = new City();
