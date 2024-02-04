@@ -13,6 +13,7 @@ async function initMap(locations) {
   map = new Map(document.getElementById("map_div"), {
     center: { lat: 42.873369419327325, lng: 19.27525603248938 },
     zoom: 8,
+    streetViewControl: false,
   });
 
   var infoWindow = new google.maps.InfoWindow();
@@ -29,6 +30,7 @@ async function initMap(locations) {
       return function() {
         infoWindow.setContent(locations[i][0]);
         infoWindow.open(map, marker);
+        map.panTo(this.getPosition());
       }
     })(marker, i));
   }
