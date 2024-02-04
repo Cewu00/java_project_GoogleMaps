@@ -31,6 +31,23 @@ public class CityServiceImpl implements CityService {
     }
 
     @Override
+    public List<CityDto> findAllCitiesMapData(){
+        List<City> cities = cityRepository.findAll();
+        return cities.stream().map((city) -> mapToCityDtoMapData(city)).collect(Collectors.toList());
+
+    }
+
+    private CityDto mapToCityDtoMapData(City city) {
+        CityDto cityDto = CityDto.builder()
+                .id(city.getId())
+                .name(city.getName())
+                .latitude_x(city.getLatitude_x())
+                .longitude_y(city.getLongitude_y())
+                .build();
+        return cityDto;
+    }
+
+    @Override
     public City saveCity(CityDto cityDto) {
         City city = mapToCity(cityDto);
         return cityRepository.save(city);
@@ -63,7 +80,7 @@ public class CityServiceImpl implements CityService {
 
 
     private CityDto mapToCityDto(City city){  // we are only mapping the things we need for the DTO, not the whole city database/model
-        CityDto cityDto = CityDto.builder()
+        CityDto cityDto = CityDto.builder()   // in this case we are mapping everything
                 .id(city.getId())
                 .name(city.getName())
                 .description(city.getDescription())

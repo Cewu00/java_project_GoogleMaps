@@ -26,8 +26,8 @@ public class CityController {
 
     @GetMapping("/cities")
     public String googleMapCities(Model model) {
-//        List<CityDto> cities = cityService.findAllCities();
-//        model.addAttribute("cities", cities);
+        List<CityDto> cities = cityService.findAllCitiesMapData();
+        model.addAttribute("cities", cities);
         return "map";
     }
 
@@ -37,13 +37,6 @@ public class CityController {
 //        model.addAttribute("cities", cities);
         return "city";
     }
-
-//    @GetMapping("/index")
-//    public ModelAndView thymeleafView(Map<String, Object> model) {
-//        model.put("number", 1234);
-//        model.put("message", "Hello from Spring MVC");
-//        return new ModelAndView("thymeleaf/index");
-//    }
 
     @GetMapping("/cities/table")
     public String listCities(Model model) {

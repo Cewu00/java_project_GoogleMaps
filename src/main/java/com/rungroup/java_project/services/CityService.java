@@ -13,6 +13,5 @@ public interface CityService {
     City saveCity(CityDto cityDto);
     CityDto findCityByID(long cityId);
     void updateCity(CityDto city);
-
-
+    List<CityDto> findAllCitiesMapData();
 }

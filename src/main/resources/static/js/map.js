@@ -5,10 +5,7 @@ v: "weekly",
 // Add other bootstrap parameters as needed, using camel case.
 });
 
-
-
-
-var map;
+console.log(dbLocations)
 
 async function initMap(locations) {
   const { Map } = await google.maps.importLibrary("maps");
@@ -24,24 +21,19 @@ async function initMap(locations) {
 
   for (i = 0; i < locations.length; i++) {
     marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][0], locations[i][1]),
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       map: map
     });
 
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
-        infoWindow.setContent(locations[i][2]);
+        infoWindow.setContent(locations[i][0]);
         infoWindow.open(map, marker);
       }
     })(marker, i));
   }
 }
 
+let map;
 
-var locations = [
-    [42.42760713402658, 19.262397293050107, 'Podgorica'],
-    [42.775711621116066, 18.96120869650851, 'Niksic'],
-    [42.08996603783748, 19.091205335454315, 'Bar'],
-    ];
-
-initMap(locations);
+initMap(dbLocations);
