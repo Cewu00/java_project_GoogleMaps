@@ -23,14 +23,14 @@
 <header>
     <div class="container d-flex justify-between align-items-center">
         <div class="header-title ">
-            <a href="#" class="logo-picture">
+            <a th:href="@{/cities}" class="logo-picture">
                 <img th:src="@{/images/noviLogo.png}" alt=""/>
             </a>
         </div>
         <nav class="header-nav ">
             <ul class="header-nav d-flex">
-                <li><a href="" class="active">home</a></li>
-                <li><a href="#about">about us</a></li>
+                <li><a th:href="@{/cities}" class="active">home</a></li>
+                <li><a th:href="@{/about-us}">about us</a></li>
                 <li><a href="#contact">contact</a></li>
                 <li><div class="dropdown">
                     <button class="dropbtn">DROPDOWN</button>
@@ -46,11 +46,8 @@
 </header>
 
 <main>
- <div class="container naslovi">
-     <h1>Welcome to Montenegro</h1>
-     <h3>Please pick a location you want to visit</h3>
- </div>
- <div class="container" layout:fragment="content">
+
+ <div layout:fragment="content">
  <!-- ovdje ide fragment iz drugih templejta zavisi sve sta se posalje kroz controler-->
  </div>
 

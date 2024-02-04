@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+    <head>
+        <title>About Us Page</title>
+    </head>
+    <body>
+        <main>
+            <div layout:fragment="content" class="container aboutUs">
+                <h1 class="aboutUs-title">About the group</h1>
+
+                <div class="groupmembers">
+                    <h3>The group consist of four members:</h3>
+                    <ul>
+                        <li>Vuk Djukanovic</li>
+                        <li>Sava Tomovic</li>
+                        <li>Bojan Vucinic</li>
+                        <li>Milena Radicevic</li>
+                    </ul>
+                </div>
+                <div class="grouproles">
+                    <h3>Roles in the project</h3>
+                    <ul>
+                        <li>Backend<ul>
+                                <li>Vuk Djukanovic</li>
+                                <li>Milena Radicevic</li>
+                            </ul></li>
+                        <li>Frontend
+                            <ul>
+                                <li>Sava Tomovic</li>
+                                <li>Bojan Vucinic</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <h3 class="goodbyemessage">We hope you enjoyed our group project and we hope we get a passing grade for this project</h3>
+            </div>
+        </main>
+    </body>
+</html>
