@@ -5,36 +5,40 @@
     layout:decorate="~{layout}">
 <head>
     <title>City List</title>
-
+    <style>
+        th {
+            padding: 0px 5px 0px 5px;
+        }
+        td {
+            padding: 0px 5px 0px 5px
+        }
+    </style>
 </head>
 
 <body>
 <main>
-    <!-- TODO: make this actually list the cities -->
     <div layout:fragment="content" class="container">
-<!--        <h1>The MAP of Montenegro</h1>-->
-<!--        <img src="https://via.placeholder.com/150" alt="Placeholder Image">-->
         <h2>Za sad samo prikaz jedne tabele iz baze nista specijalno</h2>
         <table style="color:black;">
             <tr>
-                <th style="padding: 0px 5px 0px 5px"> ID</th>
-                <th style="padding: 0px 5px 0px 5px"> Name</th>
-                <th style="padding: 0px 5px 0px 5px"> Description</th>
-                <th style="padding: 0px 5px 0px 5px"> Latitude (X)</th>
-                <th style="padding: 0px 5px 0px 5px"> Longitude (Y)</th>
-                <th style="padding: 0px 5px 0px 5px"> Created On</th>
-                <th style="padding: 0px 5px 0px 5px"> Updated On</th>
-                <th style="padding: 0px 5px 0px 5px"> Edit Buttons</th>
+                <th> ID</th>
+                <th> Name</th>
+                <th> Description</th>
+                <th> Latitude (X)</th>
+                <th> Longitude (Y)</th>
+                <th> Created On</th>
+                <th> Updated On</th>
+                <th> Edit Buttons</th>
             </tr>
             <tr th:each="city :${cities}">
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.id}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.name}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.description}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.latitude_x}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.longitude_y}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.createdOn}"></td>
-                <td style="padding: 0px 5px 0px 5px" th:text="${city.updatedOn}"></td>
-                <td style="padding: 0px 5px 0px 5px">
+                <td th:text="${city.id}"></td>
+                <td th:text="${city.name}"></td>
+                <td th:text="${city.description}"></td>
+                <td th:text="${city.latitude_x}"></td>
+                <td th:text="${city.longitude_y}"></td>
+                <td th:text="${city.createdOn}"></td>
+                <td th:text="${city.updatedOn}"></td>
+                <td>
                     <a th:href="@{/cities/{cityId}/edit(cityId=${city.id})}"> Edit </a>
                 </td>
             </tr>
