@@ -4,84 +4,80 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout}">
     <head>
-        <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
-
-        <script src="https://kit.fontawesome.com/f34c11242c.js" crossorigin="anonymous"></script>
-
-        <link href="css/style.css" rel="stylesheet" type="text/css"/>
+        <title> City </title> <!-- TODO: Dodaj tymeleaf custom city name-->
     </head>
     <body>
         <main>
-            
-            <div class="container city-name" layout:fragment="content">
-                <h1>City</h1>
+            <div layout:fragment="content">
+                <div class="container city-name">
+                    <h1>City</h1>
+                </div>
+
+                <div class="container">
+                    <section class="funFacts">
+                        <div class="container d-flex wrap">
+                            <div class="two-column">
+                                <img th:src="@{/images/Budva1novo.jpg}" alt="Budva1"/>
+                            </div>
+                            <article class="article-facts two-column justify-between">
+                                <h2><a class="active">Fun facts about the city</a></h2>
+                                <p>
+                                    Eternity bands are a classy and stylish innovation to
+                                    storm the market. These are often gifted for a marriage
+                                    anniversary or at the time of giving birth to a child.
+                                    These eternity bands need no occasion to be gifted and
+                                    can be given as gifts whenever one wishes to.
+                                </p>
+                                <a href="#" class="section-link">
+                                    Learn more fun facts about this city
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="coolPlaces">
+                        <div class="container d-flex wrap">
+                            <div class="two-column">
+                                <img th:src="@{/images/Budva2novo.jpg}" alt=""/>
+                            </div>
+                            <article class="two-column justify-between">
+                                <h2><a class="active">About Us</a></h2>
+                                <p>
+                                    Eternity bands are a classy and stylish innovation to
+                                    storm the market. These are often gifted for a marriage
+                                    anniversary or at the time of giving birth to a child.
+                                    These eternity bands need no occasion to be gifted and
+                                    can be given as gifts whenever one wishes to.
+                                </p>
+                                <a href="#" class="section-link">
+                                    Learn more about Cool places this city has to offer
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section class="historical place">
+                        <div class="container d-flex wrap">
+                            <div class="two-column">
+                                <img th:src="@{/images/Budva3.jpg}" alt=""/>
+                            </div>
+                            <article class="two-column justify-between">
+                                <h2><a class="active">Historical Places</a></h2>
+                                <p>
+                                    Eternity bands are a classy and stylish innovation to
+                                    storm the market. These are often gifted for a marriage
+                                    anniversary or at the time of giving birth to a child.
+                                    These eternity bands need no occasion to be gifted and
+                                    can be given as gifts whenever one wishes to.
+                                </p>
+                                <a href="#" class="section-link">
+                                    Learn more about Historical places this city has to offer
+                                </a>
+                            </article>
+                        </div>
+                    </section>
+                </div>
             </div>
-            
-            <div class="container">
-                <section class="funFacts">
-                    <div class="container d-flex wrap">
-                        <div class="two-column">
-                            <img src="images/Budva1novo.jpg" alt=""/>
-                        </div>
-                        <article class="article-facts two-column justify-between">
-                            <h2 id="about"><a class="active">Fun facts about the city</a></h2>
-                            <p>
-                                Eternity bands are a classy and stylish innovation to
-                                storm the market. These are often gifted for a marriage 
-                                anniversary or at the time of giving birth to a child. 
-                                These eternity bands need no occasion to be gifted and
-                                can be given as gifts whenever one wishes to.
-                            </p>
-                            <a href="#" class="section-link">
-                                Learn more fun facts about this city
-                            </a>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="coolPlaces">
-                    <div class="container d-flex wrap">
-                        <div class="two-column">
-                            <img src="images/Budva2novo.jpg" alt=""/>
-                        </div>
-                        <article class="two-column justify-between">
-                            <h2 id="about"><a class="active">About Us</a></h2>
-                            <p>
-                                Eternity bands are a classy and stylish innovation to
-                                storm the market. These are often gifted for a marriage 
-                                anniversary or at the time of giving birth to a child. 
-                                These eternity bands need no occasion to be gifted and
-                                can be given as gifts whenever one wishes to.
-                            </p>
-                            <a href="#" class="section-link">
-                                Learn more about Cool places this city has to offer
-                            </a>
-                        </article>
-                    </div>
-                </section>
-
-                <section class="historical place">
-                    <div class="container d-flex wrap">
-                        <div class="two-column">
-                            <img src="images/Budva3.jpg" alt=""/>
-                        </div>
-                        <article class="two-column justify-between">
-                            <h2 id="about"><a class="active">Historical Places</a></h2>
-                            <p>
-                                Eternity bands are a classy and stylish innovation to
-                                storm the market. These are often gifted for a marriage 
-                                anniversary or at the time of giving birth to a child. 
-                                These eternity bands need no occasion to be gifted and
-                                can be given as gifts whenever one wishes to.
-                            </p>
-                            <a href="#" class="section-link">
-                                Learn more about Historical places this city has to offer
-                            </a>
-                        </article>
-                    </div>
-                </section>
-            </div>
-
         </main>
     </body>
 </html>

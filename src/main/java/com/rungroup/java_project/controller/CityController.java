@@ -31,6 +31,20 @@ public class CityController {
         return "map";
     }
 
+    @GetMapping("/cities/city")
+    public String showCity(Model model) {
+//        List<CityDto> cities = cityService.findAllCities();
+//        model.addAttribute("cities", cities);
+        return "city";
+    }
+
+//    @GetMapping("/index")
+//    public ModelAndView thymeleafView(Map<String, Object> model) {
+//        model.put("number", 1234);
+//        model.put("message", "Hello from Spring MVC");
+//        return new ModelAndView("thymeleaf/index");
+//    }
+
     @GetMapping("/cities/table")
     public String listCities(Model model) {
         List<CityDto> cities = cityService.findAllCities();
@@ -44,8 +58,8 @@ public class CityController {
         model.addAttribute("city", city);
 
         return "cities-create";
-
     }
+
     @PostMapping("/cities/new")
     public String saveCity(@Valid @ModelAttribute("city") CityDto cityDto,
                            BindingResult result,
