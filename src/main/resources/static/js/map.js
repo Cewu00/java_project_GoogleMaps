@@ -4,28 +4,21 @@ v: "weekly",
 // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
 // Add other bootstrap parameters as needed, using camel case.
 });
-
 console.log(dbLocations)
-
 async function initMap(locations) {
   const { Map } = await google.maps.importLibrary("maps");
-
   map = new Map(document.getElementById("map_div"), {
     center: { lat: 42.873369419327325, lng: 19.27525603248938 },
     zoom: 8,
     streetViewControl: false,
   });
-
   var infoWindow = new google.maps.InfoWindow();
-
   var marker, i;
-
   for (i = 0; i < locations.length; i++) {
     marker = new google.maps.Marker({
       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
       map: map
     });
-
     google.maps.event.addListener(marker, 'click', (function(marker, i) {
       return function() {
         infoWindow.setContent(locations[i][0]);
@@ -37,5 +30,4 @@ async function initMap(locations) {
 }
 
 let map;
-
 initMap(dbLocations);

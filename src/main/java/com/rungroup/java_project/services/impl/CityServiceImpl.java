@@ -42,16 +42,6 @@ public class CityServiceImpl implements CityService {
         cityRepository.deleteById(cityID);
     }
 
-    private CityDto mapToCityDtoMapData(City city) {
-        CityDto cityDto = CityDto.builder()
-                .id(city.getId())
-                .name(city.getName())
-                .latitude_x(city.getLatitude_x())
-                .longitude_y(city.getLongitude_y())
-                .build();
-        return cityDto;
-    }
-
     @Override
     public City saveCity(CityDto cityDto) {
         City city = mapToCity(cityDto);
@@ -70,6 +60,15 @@ public class CityServiceImpl implements CityService {
         cityRepository.save(city);
     }
 
+    private CityDto mapToCityDtoMapData(City city) {
+        CityDto cityDto = CityDto.builder()
+                .id(city.getId())
+                .name(city.getName())
+                .latitude_x(city.getLatitude_x())
+                .longitude_y(city.getLongitude_y())
+                .build();
+        return cityDto;
+    }
     private City mapToCity(CityDto city) {
         City cityDto = City.builder()
                 .id(city.getId())
@@ -82,8 +81,6 @@ public class CityServiceImpl implements CityService {
                 .build();
         return cityDto;
     }
-
-
     private CityDto mapToCityDto(City city){  // we are only mapping the things we need for the DTO, not the whole city database/model
         CityDto cityDto = CityDto.builder()   // in this case we are mapping everything
                 .id(city.getId())
@@ -94,7 +91,6 @@ public class CityServiceImpl implements CityService {
                 .createdOn(city.getCreatedOn())
                 .updatedOn(city.getUpdatedOn())
                 .build();
-
         return cityDto;
     }
 }
