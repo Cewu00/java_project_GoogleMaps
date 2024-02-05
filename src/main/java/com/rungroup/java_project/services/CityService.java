@@ -14,4 +14,6 @@ public interface CityService {
     CityDto findCityByID(long cityId);
     void updateCity(CityDto city);
     List<CityDto> findAllCitiesMapData();
+
+    void delete(Long cityID);
 }
