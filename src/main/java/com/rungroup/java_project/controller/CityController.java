@@ -31,11 +31,12 @@ public class CityController {
         return "map";
     }
 
-    @GetMapping("/cities/city")
-    public String showCity(Model model) {
-//        List<CityDto> cities = cityService.findAllCities();
-//        model.addAttribute("cities", cities);
-        return "city";
+
+    @GetMapping("/cities/{cityID}/show")
+    public String showCity(@PathVariable("cityID") long cityID, Model model){
+        CityDto city = cityService.findCityByID(cityID);
+        model.addAttribute("city", city);
+        return "city-show";
     }
 
     @GetMapping("/cities/table")
@@ -64,6 +65,8 @@ public class CityController {
         cityService.saveCity(cityDto);
         return "redirect:/cities";
     }
+
+
 
     @GetMapping("/cities/{cityID}/edit")
     public String editCityForm(@PathVariable("cityID") long cityID, Model model){

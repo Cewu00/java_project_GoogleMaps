@@ -6,18 +6,19 @@
     <head>
         <title> City </title> <!-- TODO: Dodaj tymeleaf custom city name-->
     </head>
+
     <body>
         <main>
             <div layout:fragment="content">
                 <div class="container city-name">
-                    <h1>City</h1>
+                    <h1>[(${city.name})]</h1>
                 </div>
 
                 <div class="container">
                     <section class="funFacts">
                         <div class="container d-flex wrap">
                             <div class="two-column">
-                                <img th:src="@{/images/Budva1novo.jpg}" alt="Budva1"/>
+                                <img th:src="@{/images/Budva1.jpg}" alt="Budva1"/>
                             </div>
                             <article class="article-facts two-column justify-between">
                                 <h2><a class="active">Fun facts about the city</a></h2>
@@ -38,7 +39,7 @@
                     <section class="coolPlaces">
                         <div class="container d-flex wrap">
                             <div class="two-column">
-                                <img th:src="@{/images/Budva2novo.jpg}" alt=""/>
+                                <img th:src="@{/images/Budva2.jpg}" alt=""/>
                             </div>
                             <article class="two-column justify-between">
                                 <h2><a class="active">Cool Places</a></h2>
