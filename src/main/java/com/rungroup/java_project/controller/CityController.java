@@ -54,6 +54,13 @@ public class CityController {
         return "cities-create";
     }
 
+    @GetMapping("/cities/{cityID}/delete")
+    public String deleteCity(@PathVariable("cityID") Long cityID){
+        cityService.delete(cityID);
+        return "redirect:/cities";
+    }
+
+
     @PostMapping("/cities/new")
     public String saveCity(@Valid @ModelAttribute("city") CityDto cityDto,
                            BindingResult result,

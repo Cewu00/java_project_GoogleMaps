@@ -37,6 +37,11 @@ public class CityServiceImpl implements CityService {
 
     }
 
+    @Override
+    public void delete(Long cityID) {
+        cityRepository.deleteById(cityID);
+    }
+
     private CityDto mapToCityDtoMapData(City city) {
         CityDto cityDto = CityDto.builder()
                 .id(city.getId())

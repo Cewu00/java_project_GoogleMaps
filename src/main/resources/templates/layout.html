@@ -29,9 +29,9 @@
         </div>
         <nav class="header-nav ">
             <ul class="header-nav d-flex">
-                <li><a th:href="@{/cities}" class="active">home</a></li>
-                <li><a th:href="@{/about-us}">about us</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a th:href="@{/cities}" th:class="@{${servletPath} == '/cities' ? 'active':''}">home</a></li>
+                <li><a th:href="@{/about-us}" th:class="@{${servletPath} == '/about-us' ? 'active':''}">about us</a></li>
+                <li><a href="#contact" th:class="@{${servletPath} == '/contact' ? 'active':''}">contact</a></li>
                 <li><div class="dropdown">
                     <button class="dropbtn">DROPDOWN</button>
                     <div class="dropdown-content">
@@ -52,7 +52,7 @@
  </div>
 
 </main>
-<footer>
+<footer >
     <div class="container d-flex justify-between align-items-center">
         <a class="footer-logo">
             <img th:src="@{/images/noviLogo.png}" alt=""/>
